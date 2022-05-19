@@ -1,0 +1,25 @@
+
+<!--6-->
+<table>
+  <tr>
+    <th>Full Name</th>
+    <th>Mobile</th>
+    <th>E-mail</th>
+    <th>National ID</th>
+    <th>Age</th>
+
+  </tr>
+  <tr>
+
+    <td [ngClass]="{'below-20': Student.Age<20}"> {{getFullName(Student)}} </td>
+
+    <td> {{Student.Mobile}} </td>
+    <td> {{Student.Email}}  </td>
+    <td> {{Student.NationalID}}  </td>
+
+    <td> {{Student.Age}}  </td>
+
+  </tr>
+</table>
+
+

@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>#</th>
+    <th>Full Name</th>
+    <th>Age</th>
+
+    <th>Delete</th>
+    <th>INFO</th>
+  </tr>
+  <tr *ngFor="let student of getSortStudents() ; let studentIndex = index">
+    <td> {{studentIndex+1}} </td>
+    <!--1-->
+    <td [ngClass]="{'below-20': student.Age<20}" (click)="goToDetailsStudent(student)"> {{getFullName(student) |maxLength:12}} </td>
+
+
+    <td> <input type="number" [(ngModel)]="student.Age" (change)="updateAge(student)" > </td>
+
+    <td> <button type="button" (click)="delete(studentIndex,student._id)">delete</button> </td>
+    <td> <button type="button" (click)="goToDetailsStudent(student)">See More</button> </td>
+  </tr>
+</table>
+

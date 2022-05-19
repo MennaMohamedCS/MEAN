@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  display: flex;
+  justify-content: center;
+}
+input{
+  width: 180px;
+  height: 30px;
+  border: 2px;
+  border-radius: 2px;
+  color: darkolivegreen;
+  background-color: whitesmoke;
+  margin: 2px;
+
+}
+input:hover{
+  box-shadow: 10px 8px 20px black;
+}
+
+button{
+  width: 100px;
+  height: 30px;
+  border: 2px;
+  border-radius: 2px;
+  color: whitesmoke;
+  background-color: darkolivegreen;
+  margin: 2px;
+}
+
+.below-20{
+  color: red;
+}
+table,tr,th,td
+{
+    border: solid 2px darkolivegreen;
+    border-collapse: collapse;
+    padding:3px;
+    margin: 3px;
+    text-align: center;
+}
+.text-danger{
+  color: red;
+  display: block;
+}
+.creatForm{
+  display: grid;
+  grid-template-columns: repeat(2,auto);
+  gap: 10%;
+}

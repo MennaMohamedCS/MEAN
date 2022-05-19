@@ -1,0 +1,44 @@
+<label> Enter Your Information </label>
+<br><br>
+<form [formGroup]="creatForm" class="creatForm">
+  <input formControlName="FirstName" #inputFirstName type="text" placeholder="First Name">
+  <div class="text-danger" *ngIf="creatForm.controls['FirstName'].errors && creatForm.controls['FirstName'].touched">
+    <div *ngIf="creatForm.controls['FirstName'].errors['required']">required First Name</div>
+  </div>
+
+  <input formControlName="LastName" #inputLastName type="text" placeholder="Last Name" >
+  <div class="text-danger" *ngIf="creatForm.controls['LastName'].errors && creatForm.controls['LastName'].touched">
+    <div *ngIf="creatForm.controls['LastName'].errors['required']">required Last Name</div>
+  </div>
+
+  <input formControlName="Mobile" #inputMobile type="text" placeholder="Mobile" >
+  <div class="text-danger" *ngIf="creatForm.controls['Mobile'].errors && creatForm.controls['Mobile'].touched ">
+    <div *ngIf="creatForm.controls['Mobile'].errors['required']">required Mobile</div>
+    <div *ngIf="creatForm.controls['Mobile'].errors['pattern']">Should enter Mobile</div>
+  </div>
+
+  <input formControlName="Email" #inputEmail type="email" placeholder="E-mail">
+  <div class="text-danger" *ngIf="creatForm.controls['Email'].errors && creatForm.controls['Email'].touched">
+    <div *ngIf="creatForm.controls['Email'].errors['required']">required Email</div>
+    <div *ngIf="creatForm.controls['Email'].errors['email']">Should enter Email</div>
+  </div>
+
+  <input formControlName="NationalID" #inputNationalID type="text" placeholder="National ID" >
+  <div class="text-danger" *ngIf="creatForm.controls['NationalID'].errors && creatForm.controls['NationalID'].touched">
+    <div *ngIf="creatForm.controls['NationalID'].errors['required']">required NationalID</div>
+    <div *ngIf="creatForm.controls['NationalID'].errors['pattern']">Should enter Numbers</div>
+    <div *ngIf="creatForm.controls['NationalID'].errors['minlength'] || creatForm.controls['NationalID'].errors['maxlength'] ">length is 14</div>
+  </div>
+
+  <input formControlName="Age" #inputAge type="number" placeholder="Age" >
+  <div class="text-danger" *ngIf="creatForm.controls['Age'].errors && creatForm.controls['Age'].touched">
+    <div *ngIf="creatForm.controls['Age'].errors['required']">required Age</div>
+  </div>
+
+
+  <button type="button" [disabled]="creatForm.invalid" (click)="add(inputFirstName.value, inputLastName.value, inputMobile.value, inputEmail.value, inputNationalID.value, +(inputAge.value))"> Add </button>
+</form>
+<br><br>
+<p>you added <b>{{getStudentNumber()}}</b> students</p>
+
+<br><br>

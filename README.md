@@ -15,6 +15,17 @@ ExpressJs
 ```
 MongoDB
 ```
+# Handling:
+```
+CRUD operations
+Routing
+Reactive Forms - Conditional Validation
+using:-
+    Structure directives
+    Custom Pipe
+    Service
+    Binding
+```
 
 ## Project setup
 ```
